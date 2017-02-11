@@ -24,39 +24,41 @@ public class NumeroSuerte {
         int suerte;
         int v1, v2, v3, v4, v5;
         int resultado;
+        boolean problema = true;
 
-        dia = Integer.parseInt(JOptionPane.showInputDialog("Ingresa Dia"));
-        mes = Integer.parseInt(JOptionPane.showInputDialog("Ingresa Mes"));
-        amo = Integer.parseInt(JOptionPane.showInputDialog("Ingresa Año"));
+        while (true) {
+            dia = Integer.parseInt(JOptionPane.showInputDialog("Ingresa Dia"));
+            mes = Integer.parseInt(JOptionPane.showInputDialog("Ingresa Mes"));
+            amo = Integer.parseInt(JOptionPane.showInputDialog("Ingresa Año"));
+            if (dia > 0 && dia <= 31) {
+            } else {
+                System.out.println("Verifica DIA");
+                break;
+            }
+            if (mes > 0 && mes <= 12) {
 
-        if (dia > 0 && dia <= 31) {
-            System.out.println("DIA");
-        } else {
-            System.out.println("Verifica DIA");
-            return;
+            } else {
+                System.out.println("Verifica MES");
+                break;
+
+            }
+            if (amo > 0 && amo <= 2017) {
+
+            } else {
+                System.out.println("Verifica AÑO");
+                break;
+
+            }
+            suerte = dia + mes + amo;
+            v1 = suerte / 1000;
+            v2 = suerte / 100 % 10;
+            v3 = suerte / 10 % 10;
+            v4 = suerte % 10;
+
+            resultado = v1 + v2 + v3 + v4;
+            System.out.println("Numero suerte " + resultado);
         }
-        if (mes > 0 && mes <= 12) {
-            System.out.println("MES");
-        } else {
-            System.out.println("Verifica MES");
-            return;
 
-        }
-        if (amo > 0 && amo < 2017) {
-            System.out.println("AÑO");
-        } else {
-            System.out.println("Verifica AÑO");
-            return;
-
-        }
-        suerte = dia + mes + amo;
-        v1 = suerte / 1000;
-        v2 = suerte / 100 % 10;
-        v3 = suerte / 10 % 10;
-        v4 = suerte % 10;
-
-        resultado = v1 + v2 + v3 + v4;
-        System.out.println("Numero suerte " + resultado);
     }
 
 }
